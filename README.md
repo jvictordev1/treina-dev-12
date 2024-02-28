@@ -3,23 +3,27 @@
 </p>
 
 <p align="center">
-Repositório criado com intuito de documentar minha jornada de estudos dos conteúdos fornecidos durante a décima segunda edição do programa Treina.dev.<br/>
+Repositório criado com intuito de documentar minha jornada de estudos dos conteúdos fornecidos durante a décima segunda edição do programa Treinadev.<br/>
 </p>
 
 <p align="center">
-  <a href="#tecnologias-utilizadas">PT-BR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias-utilizadas">PT-BR</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp
   <a href="#used-technologies">EN-US</a>
 </p>
 
-<p>
-  <!--- <img src="https://github.com/jvictordev1/nlw-expert-notesapp/blob/main/readme_app_image.png"/> --->
-</p>
 
 PT-BR
-## Tecnologias utilizadas
+## Conteúdos trabalhados
+- Git
+- Construção de sistemas com Ruby on Rails, Javascript, Vue.js, HTML
+- Testes, code reviews
+- Testes de desempenho
 
 ---
 EN-US
-## Used technologies
-
+## Subjects
+- Git
+- Systems withRuby on Rails, Javascript, Vue.js, HTML
+- Tests, code reviews
+- Performance tests
 ---
