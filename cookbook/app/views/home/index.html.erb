@@ -1,10 +1,6 @@
 <h1>Ola Mundo</h1>
-<dl>
-    <% @recipes.each do |recipe| %>
-        <dt><strong>Nome:</strong> <%= recipe.name %></dt>
-        <dd><strong>Descrição:</strong> <%= recipe.description %></dd>
-        <dd><strong>Cozinha:</strong> <%= recipe.cuisine %></dd>
-        <dd><strong>Modo de preparo:</strong> <%= recipe.preparation_method %></dd>
-        <dd><strong>Tempo de preparo:</strong> <%= recipe.preparation_time %></dd>
-    <% end %>
-</dl>
+
+<% @recipes.each do |recipe| %>
+    <%= link_to recipe.name, recipe_path(recipe.id) %>
+    <br/>
+<% end %>

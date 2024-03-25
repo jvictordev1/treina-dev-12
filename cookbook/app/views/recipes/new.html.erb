@@ -1,0 +1,13 @@
+<%= form_with model: @recipe do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+    <%= f.label :preparation_method %>
+    <%= f.text_area :preparation_method %>
+    <%= f.label :preparation_time %>
+    <%= f.number_field :preparation_time %>
+    <%= f.submit %>
+<% end %>
