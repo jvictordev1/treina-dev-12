@@ -1,0 +1,13 @@
+<h1>Register a new recipe type</h1>
+
+<div>
+    <% if flash.notice %>
+        <%= flash.notice %>
+    <% end %>
+</div>
+
+<%= form_with model: @recipe_type do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Register' %>
+<% end %>

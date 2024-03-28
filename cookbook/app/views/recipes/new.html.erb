@@ -3,7 +3,10 @@
     <%= f.text_field :name %>
     <%= f.label :description %>
     <%= f.text_area :description %>
-    <%= f.label :cuisine %>
+    <%= f.label :cuisine_id %>
+    <%= f.collection_select :cuisine_id, Cuisine.all, :id, :name %>
+    <%= f.label :recipe_type_id %>
+    <%= f.collection_select :recipe_type_id, RecipeType.all, :id, :name %>
     <%= f.text_field :cuisine %>
     <%= f.label :preparation_method %>
     <%= f.text_area :preparation_method %>
