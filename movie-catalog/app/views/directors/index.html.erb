@@ -1,0 +1,14 @@
+<h1>Directors</h1>
+<div>
+    <%= flash.notice %>
+</div>
+<%= link_to 'New director', new_director_path %>
+
+<div>
+    <% @directors.each do |d| %>
+
+            <h2><%= d.name %></h2>
+
+        <%= link_to 'Show more', director_path(d) %>
+    <% end %>
+</div>

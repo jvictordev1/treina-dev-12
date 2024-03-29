@@ -1,0 +1,14 @@
+<%= form_with model: director do |f|  %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :nationality %>
+    <%= f.text_field :nationality %>
+    
+    <%= f.label :born_in %>
+    <%= f.date_field :born_in %>
+
+    <%= f.collection_select :genre, Genre.all, :id, :name %>
+    
+    <%= f.submit %>
+<% end %>
