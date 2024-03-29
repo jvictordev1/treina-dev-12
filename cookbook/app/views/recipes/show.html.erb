@@ -1,7 +1,16 @@
 <h1><%= @recipe.name %></h1>
 
-<strong>Descrição:</strong> <%= @recipe.description %>
-<strong>Cozinha:</strong> <%= @recipe.cuisine.name %>
-<strong>Modo de preparo:</strong> <%= @recipe.preparation_method %>
-<strong>Tempo de preparo:</strong> <%= @recipe.preparation_time %>
-<strong>Tipo de receita:</strong> <%= @recipe.recipe_type.name %>
+<%= link_to 'Edit recipe', edit_recipe_path %>
+<%= button_to 'Delete', recipe_path(:id => @recipe.id), :method => :delete %>
+
+<strong>Description:</strong> <%= @recipe.description %>
+<strong>Cuisine:</strong> <%= @recipe.cuisine.name %>
+<strong>Preparation method:</strong> <%= @recipe.preparation_method %>
+<strong>Preparation time:</strong> <%= @recipe.preparation_time %>
+<strong>Recipe type:</strong> <%= @recipe.recipe_type.name %>
+<strong>Status: </strong> <%= @recipe.status %>
+<% if @recipe.published? %>
+    <%= button_to 'Move to Drafts', unpublish_recipe_path , { method: 'patch' } %>
+<% else %>
+    <%= button_to 'Publish', publish_recipe_path , { method: 'patch' } %>
+<% end %>
