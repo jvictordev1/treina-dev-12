@@ -1,0 +1,14 @@
+<h1>Genres</h1>
+<%= link_to 'Add new genre', new_genre_path %>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<% @genres.each do |g| %>
+    <div>
+        <h3><%= g.name %></h3>
+        <%= link_to 'Edit', edit_genre_path(g) %>
+        <%= button_to "delete", genre_path(g), :method => :delete %>
+    </div>
+<% end %>
