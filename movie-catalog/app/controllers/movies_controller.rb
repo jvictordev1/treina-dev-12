@@ -12,7 +12,7 @@ class MoviesController < ApplicationController
     end
     def create
         items = params[:movie]
-        @movie = Movie.new(title: items[:title], release_date: items[:release_date], synopsis: items[:synopsis], duration: items[:duration], director_id: items[:director_id], genre_id: items[:genre_id], released: items[:released].to_i, status: items[:status].to_i)
+        @movie = Movie.new(title: items[:title], release_date: items[:release_date], synopsis: items[:synopsis], duration: items[:duration], director_id: items[:director_id], genre_id: items[:genre_id], released: items[:released].to_i, status: items[:status].to_i, cover: items[:cover])
 
         if @movie.save
             return redirect_to movies_path, notice: 'Movie created successfully'
@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
     def update
         items = params[:movie]
         @movie = Movie.find(params[:id])
-        @movie.update(title: items[:title], release_date: items[:release_date], synopsis: items[:synopsis], duration: items[:duration], director_id: items[:director_id], genre_id: items[:genre_id], released: items[:released].to_i, status: items[:status].to_i)
+        @movie.update(title: items[:title], release_date: items[:release_date], synopsis: items[:synopsis], duration: items[:duration], director_id: items[:director_id], genre_id: items[:genre_id], released: items[:released].to_i, status: items[:status].to_i, cover: items[:cover])
 
         if @movie.save
             return redirect_to movies_path, notice: 'Movie updated successfully'

@@ -2,22 +2,6 @@
 <h2>All movies</h2>
 <%= link_to 'Register a new movie!', new_movie_path %>
 <h3>Released movies</h3>
-<ul>
-    <% @releasedMovies.each do |m| %>
-        <li>
-            <h3><%= m.title %></h3>
-            <p><%= m.release_date.year %></p>
-            <%= link_to 'See more', movie_path(m) %>
-        </li>
-    <% end %>
-</ul>
+<%= render partial: 'resume', locals: { movies: @releasedMovies } %>
 <h3>Unreleased movies</h3>
-<ul>
-    <% @unreleasedMovies.each do |m| %>
-        <li>
-            <h3><%= m.title %></h3>
-            <p><%= m.release_date.year %></p>
-            <%= link_to 'See more', movie_path(m) %>
-        </li>
-    <% end %>
-</ul>
+<%= render partial: 'resume', locals: { movies: @unreleasedMovies } %>

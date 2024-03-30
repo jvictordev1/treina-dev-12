@@ -1,5 +1,8 @@
 <%= link_to 'Go back', movies_path %>
 <h2><%= @movie.title %> - <%= @movie.released %></h2>
+<% if @movie.cover.attached? %>
+    <%= image_tag @movie.cover, size: '200x300' %>
+<% end %>
 <ul>
     <li>Release data: <%= @movie.release_date.strftime("%d/%m/%Y") %></li>
     <li>Synopsis: <%= @movie.synopsis %></li>

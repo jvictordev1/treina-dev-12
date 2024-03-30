@@ -18687,3 +18687,1935 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 2535)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20240330163140)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240330163140') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-03-30 13:58:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1481)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 16131)
+Completed 200 OK in 19ms (Views: 11.7ms | ActiveRecord: 1.2ms | Allocations: 19157)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 13:58:30 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5513)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6680)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 10765)
+
+
+Started GET "/drafts" for 127.0.0.1 at 2024-03-30 13:58:41 -0300
+Processing by MoviesController#draft as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/draft.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ?[0m  [["status", 2]]
+  ↳ app/views/movies/draft.html.erb:4
+  Rendered movies/draft.html.erb within layouts/application (Duration: 2.1ms | Allocations: 670)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2032)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2385)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 13:58:41 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 882)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2061)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2531)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2024-03-30 13:58:42 -0300
+Processing by GenresController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1924)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3947)
+
+
+Started POST "/genres" for 127.0.0.1 at 2024-03-30 13:58:46 -0300
+Processing by GenresController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "genre"=>{"name"=>"Suspense"}, "commit"=>"Create!"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:15:in `create'
+  [1m[36mGenre Create (1.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["name", "Suspense"], ["created_at", "2024-03-30 16:58:46.485083"], ["updated_at", "2024-03-30 16:58:46.485083"]]
+  ↳ app/controllers/genres_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (25.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/genres/new
+Completed 302 Found in 31ms (ActiveRecord: 26.9ms | Allocations: 2080)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2024-03-30 13:58:46 -0300
+Processing by GenresController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 523)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1688)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1997)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 13:58:47 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2024)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 2499)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 13:58:48 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1743)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 2005)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 13:58:48 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 5.3ms | Allocations: 3766)
+  Rendered directors/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 4210)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5375)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 8252)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 13:58:56 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"Jose", "nationality"=>"Brazilian", "born_in"=>"2024-03-11", "genre"=>"8"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:16:in `create'
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:16:in `create'
+  [1m[36mDirector Create (0.2ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Jose"], ["nationality", "Brazilian"], ["born_in", "2024-03-11"], ["created_at", "2024-03-30 16:58:56.224844"], ["updated_at", "2024-03-30 16:58:56.224844"], ["genre_id", 8]]
+  ↳ app/controllers/directors_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms | Allocations: 3556)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 13:58:56 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 692)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1858)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 2123)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 13:58:57 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2179)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 2535)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 13:58:57 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2191)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 2547)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 13:58:59 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2578)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3750)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 4021)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 13:59:13 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-07", "synopsis"=>"123", "duration"=>"120", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (1.9ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "ABC"], ["release_date", "2024-03-07"], ["synopsis", "123"], ["duration", 120], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 16:59:13.268886"], ["updated_at", "2024-03-30 16:59:13.268886"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms | Allocations: 7110)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 13:59:13 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2278)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 2637)
+
+
+Started GET "/movies/25" for 127.0.0.1 at 2024-03-30 13:59:45 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1671)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2836)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 4131)
+
+
+Started GET "/movies/25/edit" for 127.0.0.1 at 2024-03-30 13:59:46 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:26
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3098)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4259)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 4926)
+
+
+Started GET "/" for ::1 at 2024-03-30 14:02:53 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 5268)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 19821)
+Completed 200 OK in 26ms (Views: 17.5ms | ActiveRecord: 1.9ms | Allocations: 24347)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:02:56 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 10713)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 11879)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.4ms | Allocations: 12220)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:03:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"testando", "release_date"=>"2024-03-07", "synopsis"=>"123", "duration"=>"120", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749fa28185d8 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-e2zlod.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-28 09-24-24.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-28 09-24-24.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "testando"], ["release_date", "2024-03-07"], ["synopsis", "123"], ["duration", 120], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:03:51.040338"], ["updated_at", "2024-03-30 17:03:51.040338"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 106ms (ActiveRecord: 4.7ms | Allocations: 48860)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:03:51 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1582)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 34289)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.2ms | Allocations: 37737)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:04:20 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 5355)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 20118)
+Completed 200 OK in 25ms (Views: 15.9ms | ActiveRecord: 2.5ms | Allocations: 24591)
+
+
+Started GET "/movies/25" for ::1 at 2024-03-30 14:04:25 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 25], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 23.9ms | Allocations: 16579)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 17740)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 1.3ms | Allocations: 19074)
+
+
+Started GET "/movies/26" for ::1 at 2024-03-30 14:04:26 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 26], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2122)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3283)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 3905)
+
+
+Started DELETE "/movies/26" for ::1 at 2024-03-30 14:05:28 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"26"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 26], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 18ms (ActiveRecord: 12.8ms | Allocations: 3009)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:05:28 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2256)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 2658)
+
+
+Started GET "/movies/25" for ::1 at 2024-03-30 14:05:29 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 25], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2118)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3279)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 3885)
+
+
+Started GET "/movies/25/edit" for ::1 at 2024-03-30 14:05:30 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:26
+  Rendered movies/edit.html.erb within layouts/application (Duration: 14.0ms | Allocations: 7835)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 9011)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 9681)
+
+
+Started DELETE "/movies/25" for ::1 at 2024-03-30 14:05:31 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"25"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 25], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 25]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms | Allocations: 2816)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:05:31 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2211)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2573)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:05:32 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3314)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4479)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 4820)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:05:49 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"coco", "release_date"=>"2024-03-26", "synopsis"=>"asoasdo", "duration"=>"150", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749f66b47538 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-u3xob2.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-26 14-20-16.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-26 14-20-16.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (1.0ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "coco"], ["release_date", "2024-03-26"], ["synopsis", "asoasdo"], ["duration", 150], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:05:49.372581"], ["updated_at", "2024-03-30 17:05:49.372581"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms | Allocations: 3643)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:05:49 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2250)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 2610)
+
+
+Started GET "/movies/27" for ::1 at 2024-03-30 14:05:50 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 27], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2111)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3272)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 3878)
+
+
+Started GET "/movies/27" for ::1 at 2024-03-30 14:06:33 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 27], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 20.6ms | Allocations: 16224)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 30781)
+Completed 200 OK in 48ms (Views: 30.9ms | ActiveRecord: 3.2ms | Allocations: 40056)
+
+
+Started DELETE "/movies/27" for ::1 at 2024-03-30 14:06:35 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"27"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 27], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 27]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 18ms (ActiveRecord: 13.0ms | Allocations: 2944)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:06:35 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2582)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3063)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:06:36 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3423)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4588)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4928)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:06:48 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-14", "synopsis"=>"123", "duration"=>"120", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749fa2291510 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-knww4n.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-28 08-59-14.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-28 08-59-14.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.8ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "ABC"], ["release_date", "2024-03-14"], ["synopsis", "123"], ["duration", 120], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:06:48.559092"], ["updated_at", "2024-03-30 17:06:48.559092"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 28], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 28], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "03h3ead3amevb9ymm52i3j465xah"], ["filename", "Screenshot from 2024-03-28 08-59-14.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 3324], ["checksum", "4nnbr+6BdMCNZeX/VeMiCA=="], ["created_at", "2024-03-30 17:06:48.579120"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 28], ["blob_id", 1], ["created_at", "2024-03-30 17:06:48.586060"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:06:48.587685"], ["id", 28]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: 03h3ead3amevb9ymm52i3j465xah (checksum: 4nnbr+6BdMCNZeX/VeMiCA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e08b1f53-d287-471d-8ee3-a2495d44c310) to Async(default) with arguments: #<GlobalID:0x0000749fa2233b90 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 94ms (ActiveRecord: 2.5ms | Allocations: 48226)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:06:48 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310] Performing ActiveStorage::AnalyzeJob (Job ID: e08b1f53-d287-471d-8ee3-a2495d44c310) from Async(default) enqueued at 2024-03-30T17:06:48.614104011Z with arguments: #<GlobalID:0x0000749fa21ea850 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 28]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:06:48.642616"], ["id", 28]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e08b1f53-d287-471d-8ee3-a2495d44c310] Performed ActiveStorage::AnalyzeJob (Job ID: e08b1f53-d287-471d-8ee3-a2495d44c310) from Async(default) in 25.58ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2276)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2636)
+
+
+Started GET "/movies/28" for ::1 at 2024-03-30 14:06:49 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 28], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:9
+  Rendered movies/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2137)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3298)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 3903)
+
+
+Started DELETE "/movies/28" for ::1 at 2024-03-30 14:06:53 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"28"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 28], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 28]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac) to Async(default) with arguments: #<GlobalID:0x0000749f66c86958 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 50ms (ActiveRecord: 1.8ms | Allocations: 5930)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:06:53 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac] Performing ActiveStorage::PurgeJob (Job ID: ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac) from Async(default) enqueued at 2024-03-30T17:06:53.531395004Z with arguments: #<GlobalID:0x0000749f66b999f0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mActiveStorage::Attachment Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mActiveStorage::Blob Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 03h3ead3amevb9ymm52i3j465xah[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/03h3ead3amevb9ymm52i3j465xah/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac] Performed ActiveStorage::PurgeJob (Job ID: ffddcd59-a1f1-4d6b-aa24-3c3ac72462ac) from Async(default) in 23.96ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2212)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2572)
+
+
+Started GET "/directors" for ::1 at 2024-03-30 14:07:24 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4506)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 19072)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 1.8ms | Allocations: 21242)
+
+
+Started GET "/drafts" for ::1 at 2024-03-30 14:07:24 -0300
+Processing by MoviesController#draft as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/draft.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ?[0m  [["status", 2]]
+  ↳ app/views/movies/draft.html.erb:4
+  Rendered movies/draft.html.erb within layouts/application (Duration: 1.4ms | Allocations: 722)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2090)
+Completed 200 OK in 16ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 8858)
+
+
+Started GET "/directors" for ::1 at 2024-03-30 14:07:25 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 658)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1824)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2083)
+
+
+Started GET "/genres" for ::1 at 2024-03-30 14:07:25 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3227)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4396)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 5940)
+
+
+Started GET "/" for ::1 at 2024-03-30 14:07:27 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1193)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2550)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2978)
+
+
+Started GET "/directors" for ::1 at 2024-03-30 14:07:27 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 636)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1817)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 2078)
+
+
+Started GET "/genres" for ::1 at 2024-03-30 14:07:28 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1948)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 2207)
+
+
+Started GET "/" for ::1 at 2024-03-30 14:07:28 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2170)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 2525)
+
+
+Started GET "/" for ::1 at 2024-03-30 14:07:57 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1269)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 16019)
+Completed 200 OK in 20ms (Views: 12.2ms | ActiveRecord: 2.2ms | Allocations: 20476)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:07:59 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 10748)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 11914)
+Completed 200 OK in 26ms (Views: 19.9ms | ActiveRecord: 1.1ms | Allocations: 16211)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:08:27 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"123", "release_date"=>"2024-03-13", "synopsis"=>"123", "duration"=>"120", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749fa32d56b0 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-85mm1t.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-28 09-04-12.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-28 09-04-12.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.8ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "123"], ["release_date", "2024-03-13"], ["synopsis", "123"], ["duration", 120], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:08:27.428889"], ["updated_at", "2024-03-30 17:08:27.428889"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 29], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 29], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "mb3bcu8e9wqnvk74olk8poyctx83"], ["filename", "Screenshot from 2024-03-28 09-04-12.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 357834], ["checksum", "/u5I+//MPQPYeUH08wpFwg=="], ["created_at", "2024-03-30 17:08:27.439599"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 29], ["blob_id", 2], ["created_at", "2024-03-30 17:08:27.441131"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:08:27.442653"], ["id", 29]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+[36m  Disk Storage (1.3ms) [0m[32mUploaded file to key: mb3bcu8e9wqnvk74olk8poyctx83 (checksum: /u5I+//MPQPYeUH08wpFwg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 76e10fba-72df-4f1d-b88d-bcf76a15175e) to Async(default) with arguments: #<GlobalID:0x0000749f66c6bb08 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/2>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 39ms (ActiveRecord: 3.4ms | Allocations: 27528)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:08:27 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e] Performing ActiveStorage::AnalyzeJob (Job ID: 76e10fba-72df-4f1d-b88d-bcf76a15175e) from Async(default) enqueued at 2024-03-30T17:08:27.448203883Z with arguments: #<GlobalID:0x0000749f66bc6338 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 29]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:08:27.463867"], ["id", 29]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [76e10fba-72df-4f1d-b88d-bcf76a15175e] Performed ActiveStorage::AnalyzeJob (Job ID: 76e10fba-72df-4f1d-b88d-bcf76a15175e) from Async(default) in 12.29ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 899)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2269)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 2670)
+
+
+Started GET "/movies/29" for ::1 at 2024-03-30 14:08:28 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 29], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4076)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5237)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 6529)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--19ddbb76ea9da293815c0f45ceee6210265e155b/Screenshot%20from%202024-03-28%2009-04-12.png" for ::1 at 2024-03-30 14:08:28 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--19ddbb76ea9da293815c0f45ceee6210265e155b", "filename"=>"Screenshot from 2024-03-28 09-04-12"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: mb3bcu8e9wqnvk74olk8poyctx83 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYjNiY3U4ZTl3cW52azc0b2xrOHBveWN0eDgzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMDQtMTIucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMDQtMTIucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxMzoyOC44NjhaIiwicHVyIjoiYmxvYl9rZXkifX0=--249700a9ee6245b8234186cdb13b202901bd02a6/Screenshot%20from%202024-03-28%2009-04-12.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYjNiY3U4ZTl3cW52azc0b2xrOHBveWN0eDgzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMDQtMTIucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMDQtMTIucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxMzoyOC44NjhaIiwicHVyIjoiYmxvYl9rZXkifX0=--249700a9ee6245b8234186cdb13b202901bd02a6/Screenshot%20from%202024-03-28%2009-04-12.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2380)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJtYjNiY3U4ZTl3cW52azc0b2xrOHBveWN0eDgzIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMDQtMTIucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMDQtMTIucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxMzoyOC44NjhaIiwicHVyIjoiYmxvYl9rZXkifX0=--249700a9ee6245b8234186cdb13b202901bd02a6/Screenshot%20from%202024-03-28%2009-04-12.png" for ::1 at 2024-03-30 14:08:28 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot from 2024-03-28 09-04-12"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Started DELETE "/movies/29" for ::1 at 2024-03-30 14:08:37 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"29"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 29], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 29]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 264891ee-b165-41ab-ae67-689d5963d426) to Async(default) with arguments: #<GlobalID:0x0000749fa33b0be8 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/2>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms | Allocations: 5143)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:08:37 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426] Performing ActiveStorage::PurgeJob (Job ID: 264891ee-b165-41ab-ae67-689d5963d426) from Async(default) enqueued at 2024-03-30T17:08:37.988924918Z with arguments: #<GlobalID:0x0000749fa2c5e958 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mActiveStorage::Attachment Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: mb3bcu8e9wqnvk74olk8poyctx83[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/mb3bcu8e9wqnvk74olk8poyctx83/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [264891ee-b165-41ab-ae67-689d5963d426] Performed ActiveStorage::PurgeJob (Job ID: 264891ee-b165-41ab-ae67-689d5963d426) from Async(default) in 15.64ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2218)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 2578)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:10:19 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.5ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 10810)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 25379)
+Completed 200 OK in 86ms (Views: 32.8ms | ActiveRecord: 4.8ms | Allocations: 33645)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:10:20 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2688)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3853)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 4120)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:10:33 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"asdjasdj", "release_date"=>"2024-03-14", "synopsis"=>"aijsdnas", "duration"=>"150", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749f66ab8c70 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-8tnqit.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-27 20-56-21.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-27 20-56-21.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.9ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "asdjasdj"], ["release_date", "2024-03-14"], ["synopsis", "aijsdnas"], ["duration", 150], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:10:33.817353"], ["updated_at", "2024-03-30 17:10:33.817353"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "d08cu9ld75g6vtovw00wi69lhb2l"], ["filename", "Screenshot from 2024-03-27 20-56-21.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 132057], ["checksum", "9/G8I/35giBJVDX3sP79gA=="], ["created_at", "2024-03-30 17:10:33.829786"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 30], ["blob_id", 3], ["created_at", "2024-03-30 17:10:33.831585"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:10:33.832934"], ["id", 30]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: d08cu9ld75g6vtovw00wi69lhb2l (checksum: 9/G8I/35giBJVDX3sP79gA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 37f5eedf-897d-44c6-8ddd-f14f7735d708) to Async(default) with arguments: #<GlobalID:0x0000749f6672f748 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/3>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 41ms (ActiveRecord: 3.6ms | Allocations: 27557)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:10:33 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708] Performing ActiveStorage::AnalyzeJob (Job ID: 37f5eedf-897d-44c6-8ddd-f14f7735d708) from Async(default) enqueued at 2024-03-30T17:10:33.838190869Z with arguments: #<GlobalID:0x0000749f666e82d0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 30]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:10:33.854291"], ["id", 30]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [37f5eedf-897d-44c6-8ddd-f14f7735d708] Performed ActiveStorage::AnalyzeJob (Job ID: 37f5eedf-897d-44c6-8ddd-f14f7735d708) from Async(default) in 13.34ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2618)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3094)
+
+
+Started GET "/movies/30" for ::1 at 2024-03-30 14:10:34 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3985)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5146)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 6437)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--69ce9f1f945293013f3dd45dd9129ae5f3b4122d/Screenshot%20from%202024-03-27%2020-56-21.png" for ::1 at 2024-03-30 14:10:35 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--69ce9f1f945293013f3dd45dd9129ae5f3b4122d", "filename"=>"Screenshot from 2024-03-27 20-56-21"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: d08cu9ld75g6vtovw00wi69lhb2l (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkMDhjdTlsZDc1ZzZ2dG92dzAwd2k2OWxoYjJsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjcgMjAtNTYtMjEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI3JTIwMjAtNTYtMjEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxNTozNS4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a160c8f1c906263befb9aba7b462f272026081f9/Screenshot%20from%202024-03-27%2020-56-21.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkMDhjdTlsZDc1ZzZ2dG92dzAwd2k2OWxoYjJsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjcgMjAtNTYtMjEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI3JTIwMjAtNTYtMjEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxNTozNS4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a160c8f1c906263befb9aba7b462f272026081f9/Screenshot%20from%202024-03-27%2020-56-21.png
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2050)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkMDhjdTlsZDc1ZzZ2dG92dzAwd2k2OWxoYjJsIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjcgMjAtNTYtMjEucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI3JTIwMjAtNTYtMjEucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxNTozNS4wNDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--a160c8f1c906263befb9aba7b462f272026081f9/Screenshot%20from%202024-03-27%2020-56-21.png" for ::1 at 2024-03-30 14:10:35 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot from 2024-03-27 20-56-21"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started DELETE "/movies/30" for ::1 at 2024-03-30 14:10:40 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"30"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 30], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 67fcd0b4-412d-42fc-9bc9-46c905e8249d) to Async(default) with arguments: #<GlobalID:0x0000749fa222fd60 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/3>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms | Allocations: 5111)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d] Performing ActiveStorage::PurgeJob (Job ID: 67fcd0b4-412d-42fc-9bc9-46c905e8249d) from Async(default) enqueued at 2024-03-30T17:10:40.433090253Z with arguments: #<GlobalID:0x0000749fa2241e20 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/3>>
+Started GET "/movies" for ::1 at 2024-03-30 14:10:40 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mActiveStorage::Attachment Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: d08cu9ld75g6vtovw00wi69lhb2l[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/d08cu9ld75g6vtovw00wi69lhb2l/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [67fcd0b4-412d-42fc-9bc9-46c905e8249d] Performed ActiveStorage::PurgeJob (Job ID: 67fcd0b4-412d-42fc-9bc9-46c905e8249d) from Async(default) in 15.97ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:16
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2209)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 2569)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:11:22 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/index.html.erb:6
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:19
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1344)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 16167)
+Completed 200 OK in 24ms (Views: 16.6ms | ActiveRecord: 1.6ms | Allocations: 20627)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:13:01 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 1.2ms | Allocations: 738)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/index.html.erb:8
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1642)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 16269)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 2.2ms | Allocations: 20723)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:13:23 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 2.3ms | Allocations: 733)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 1.4ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1527)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 16292)
+Completed 200 OK in 36ms (Views: 28.4ms | ActiveRecord: 1.8ms | Allocations: 20736)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:13:36 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 19.3ms | Allocations: 13448)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 14618)
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 1.1ms | Allocations: 18915)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:13:50 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"jose", "release_date"=>"2024-03-19", "synopsis"=>"asdasd", "duration"=>"1050", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749fa0612498 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-5lmkct.png>, @content_type="image/png", @original_filename="Screenshot from 2024-03-28 09-24-24.png", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"Screenshot from 2024-03-28 09-24-24.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.8ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "jose"], ["release_date", "2024-03-19"], ["synopsis", "asdasd"], ["duration", 1050], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:13:50.542048"], ["updated_at", "2024-03-30 17:13:50.542048"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 31], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 31], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "dn1bz9kgjgyphy15a9xcbbhi9gwf"], ["filename", "Screenshot from 2024-03-28 09-24-24.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 35162], ["checksum", "0B3/8T1kPb0IjI6Wd9p7EA=="], ["created_at", "2024-03-30 17:13:50.554216"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 31], ["blob_id", 4], ["created_at", "2024-03-30 17:13:50.555979"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:13:50.557346"], ["id", 31]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+[36m  Disk Storage (0.3ms) [0m[32mUploaded file to key: dn1bz9kgjgyphy15a9xcbbhi9gwf (checksum: 0B3/8T1kPb0IjI6Wd9p7EA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fa806863-ebd4-4130-84b7-200cb4eaa9d5) to Async(default) with arguments: #<GlobalID:0x0000749f666b4b10 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/4>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 38ms (ActiveRecord: 3.7ms | Allocations: 27534)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:13:50 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5] Performing ActiveStorage::AnalyzeJob (Job ID: fa806863-ebd4-4130-84b7-200cb4eaa9d5) from Async(default) enqueued at 2024-03-30T17:13:50.561926923Z with arguments: #<GlobalID:0x0000749f6661b938 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 4]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 31]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:13:50.577418"], ["id", 31]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fa806863-ebd4-4130-84b7-200cb4eaa9d5] Performed ActiveStorage::AnalyzeJob (Job ID: fa806863-ebd4-4130-84b7-200cb4eaa9d5) from Async(default) in 12.83ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 31], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 8.4ms | Allocations: 2909)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.7ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3508)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4899)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 5299)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--5f87b9388c2c286dadb1b973853ad7f5593df0f5/Screenshot%20from%202024-03-28%2009-24-24.png" for ::1 at 2024-03-30 14:13:50 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--5f87b9388c2c286dadb1b973853ad7f5593df0f5", "filename"=>"Screenshot from 2024-03-28 09-24-24"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: dn1bz9kgjgyphy15a9xcbbhi9gwf (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkbjFiejlrZ2pneXBoeTE1YTl4Y2JiaGk5Z3dmIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMjQtMjQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMjQtMjQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxODo1MC42MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--2e7086b0ae7c7b7323f543ca82d50f7a79e7f9a7/Screenshot%20from%202024-03-28%2009-24-24.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkbjFiejlrZ2pneXBoeTE1YTl4Y2JiaGk5Z3dmIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMjQtMjQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMjQtMjQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxODo1MC42MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--2e7086b0ae7c7b7323f543ca82d50f7a79e7f9a7/Screenshot%20from%202024-03-28%2009-24-24.png
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 2049)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJkbjFiejlrZ2pneXBoeTE1YTl4Y2JiaGk5Z3dmIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjQtMDMtMjggMDktMjQtMjQucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI0LTAzLTI4JTIwMDktMjQtMjQucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNC0wMy0zMFQxNzoxODo1MC42MjBaIiwicHVyIjoiYmxvYl9rZXkifX0=--2e7086b0ae7c7b7323f543ca82d50f7a79e7f9a7/Screenshot%20from%202024-03-28%2009-24-24.png" for ::1 at 2024-03-30 14:13:50 -0300
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Screenshot from 2024-03-28 09-24-24"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/movies/31" for ::1 at 2024-03-30 14:14:01 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 31], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3153)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4325)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 5616)
+
+
+Started DELETE "/movies/31" for ::1 at 2024-03-30 14:14:03 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"31"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 31], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 31]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 54310567-1e5e-486c-bf90-e5229a5207f7) to Async(default) with arguments: #<GlobalID:0x0000749fa3200bb8 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/4>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms | Allocations: 5125)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/movies" for ::1 at 2024-03-30 14:14:03 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7] Performing ActiveStorage::PurgeJob (Job ID: 54310567-1e5e-486c-bf90-e5229a5207f7) from Async(default) enqueued at 2024-03-30T17:14:03.303271442Z with arguments: #<GlobalID:0x0000749f66d235a0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mActiveStorage::Attachment Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: dn1bz9kgjgyphy15a9xcbbhi9gwf[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/dn1bz9kgjgyphy15a9xcbbhi9gwf/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [54310567-1e5e-486c-bf90-e5229a5207f7] Performed ActiveStorage::PurgeJob (Job ID: 54310567-1e5e-486c-bf90-e5229a5207f7) from Async(default) in 15.37ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.7ms | Allocations: 412)
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.6ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 968)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2329)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 2686)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:14:19 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 10781)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 25347)
+Completed 200 OK in 34ms (Views: 23.7ms | ActiveRecord: 2.6ms | Allocations: 33612)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:16:16 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"asdas", "release_date"=>"2024-03-21", "synopsis"=>"Asdas", "duration"=>"100", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (1.0ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "asdas"], ["release_date", "2024-03-21"], ["synopsis", "Asdas"], ["duration", 100], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:16:16.141509"], ["updated_at", "2024-03-30 17:16:16.141509"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 45ms (ActiveRecord: 2.7ms | Allocations: 13240)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:16:16 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  Rendered movies/_resume.html.erb (Duration: 2.5ms | Allocations: 1505)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.6ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2311)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3672)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 4200)
+
+
+Started GET "/movies/32" for ::1 at 2024-03-30 14:16:16 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2406)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3567)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4858)
+
+
+Started GET "/movies/32/edit" for ::1 at 2024-03-30 14:16:17 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:26
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 3232)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4393)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 5056)
+
+
+Started GET "/movies/32/edit" for ::1 at 2024-03-30 14:16:18 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/edit.html.erb:26
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2728)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3889)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 4491)
+
+
+Started PATCH "/movies/32" for ::1 at 2024-03-30 14:16:23 -0300
+Processing by MoviesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"asdas", "release_date"=>"2024-03-21", "synopsis"=>"Asdas", "duration"=>"100", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749f66482b80 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-mscppk.webp>, @content_type="image/webp", @original_filename="717kKOl5B3L.webp", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"717kKOl5B3L.webp\"\r\nContent-Type: image/webp\r\n">}, "commit"=>"Update Movie", "id"=>"32"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "butso6c6g5no1xequbzrc1ggwm57"], ["filename", "717kKOl5B3L.webp"], ["content_type", "image/webp"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 150942], ["checksum", "bJQ9DIMpBvxO0fdcRYMofw=="], ["created_at", "2024-03-30 17:16:23.502980"]]
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 32], ["blob_id", 5], ["created_at", "2024-03-30 17:16:23.505213"]]
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:16:23.506669"], ["id", 32]]
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:29:in `update'
+[36m  Disk Storage (0.6ms) [0m[32mUploaded file to key: butso6c6g5no1xequbzrc1ggwm57 (checksum: bJQ9DIMpBvxO0fdcRYMofw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 23e67bed-3d87-4f71-94fc-612db6bdaa45) to Async(default) with arguments: #<GlobalID:0x0000749fa0d4c3d0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/5>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:29:in `update'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 36ms (ActiveRecord: 6.8ms | Allocations: 19636)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45] Performing ActiveStorage::AnalyzeJob (Job ID: 23e67bed-3d87-4f71-94fc-612db6bdaa45) from Async(default) enqueued at 2024-03-30T17:16:23.510497173Z with arguments: #<GlobalID:0x0000749fa32c1a48 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/movies" for ::1 at 2024-03-30 14:16:23 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 32]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:16:23.525762"], ["id", 32]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [23e67bed-3d87-4f71-94fc-612db6bdaa45] Performed ActiveStorage::AnalyzeJob (Job ID: 23e67bed-3d87-4f71-94fc-612db6bdaa45) from Async(default) in 12.91ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 3.9ms | Allocations: 2883)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.7ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3439)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4830)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 5186)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--96b3008a209385f490b7effc91003969e31c878f/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:16:23 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NSwicHVyIjoiYmxvYl9pZCJ9fQ==--96b3008a209385f490b7effc91003969e31c878f", "filename"=>"717kKOl5B3L"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: butso6c6g5no1xequbzrc1ggwm57 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJidXRzbzZjNmc1bm8xeGVxdWJ6cmMxZ2d3bTU3IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6MjMuNTcxWiIsInB1ciI6ImJsb2Jfa2V5In19--58aff1b60503db77f1336acd20d4dbb180c2068e/717kKOl5B3L.webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJidXRzbzZjNmc1bm8xeGVxdWJ6cmMxZ2d3bTU3IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6MjMuNTcxWiIsInB1ciI6ImJsb2Jfa2V5In19--58aff1b60503db77f1336acd20d4dbb180c2068e/717kKOl5B3L.webp
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2012)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJidXRzbzZjNmc1bm8xeGVxdWJ6cmMxZ2d3bTU3IiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6MjMuNTcxWiIsInB1ciI6ImJsb2Jfa2V5In19--58aff1b60503db77f1336acd20d4dbb180c2068e/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:16:23 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/movies/32" for ::1 at 2024-03-30 14:16:29 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2824)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3986)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 4588)
+
+
+Started DELETE "/movies/32" for ::1 at 2024-03-30 14:16:34 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"32"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 32], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 89a29386-21ad-4709-9304-7ea97dabf539) to Async(default) with arguments: #<GlobalID:0x0000749f666159c0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/5>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 13ms (ActiveRecord: 1.8ms | Allocations: 5139)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:16:34 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539] Performing ActiveStorage::PurgeJob (Job ID: 89a29386-21ad-4709-9304-7ea97dabf539) from Async(default) enqueued at 2024-03-30T17:16:34.505577621Z with arguments: #<GlobalID:0x0000749fa2d43a08 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mActiveStorage::Attachment Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: butso6c6g5no1xequbzrc1ggwm57[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/butso6c6g5no1xequbzrc1ggwm57/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [89a29386-21ad-4709-9304-7ea97dabf539] Performed ActiveStorage::PurgeJob (Job ID: 89a29386-21ad-4709-9304-7ea97dabf539) from Async(default) in 18.97ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.7ms | Allocations: 412)
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.6ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 968)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2374)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 2732)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:16:45 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 10762)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 25313)
+Completed 200 OK in 34ms (Views: 23.3ms | ActiveRecord: 2.9ms | Allocations: 33577)
+
+
+Started POST "/movies" for ::1 at 2024-03-30 14:16:58 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"asdas", "release_date"=>"2024-03-13", "synopsis"=>"asdas", "duration"=>"100", "director_id"=>"18", "genre_id"=>"8", "released"=>"1", "status"=>"3", "cover"=>#<ActionDispatch::Http::UploadedFile:0x0000749fa328b470 @tempfile=#<Tempfile:/tmp/RackMultipart20240330-92423-8ck7hv.webp>, @content_type="image/webp", @original_filename="717kKOl5B3L.webp", @headers="Content-Disposition: form-data; name=\"movie[cover]\"; filename=\"717kKOl5B3L.webp\"\r\nContent-Type: image/webp\r\n">}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mDirector Load (0.9ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at", "released", "status") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "asdas"], ["release_date", "2024-03-13"], ["synopsis", "asdas"], ["duration", 100], ["director_id", 18], ["genre_id", 8], ["created_at", "2024-03-30 17:16:58.194662"], ["updated_at", "2024-03-30 17:16:58.194662"], ["released", 1], ["status", 3]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "1ty2himoe85fhw5nhjo57fhzzehq"], ["filename", "717kKOl5B3L.webp"], ["content_type", "image/webp"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 150942], ["checksum", "bJQ9DIMpBvxO0fdcRYMofw=="], ["created_at", "2024-03-30 17:16:58.206411"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "cover"], ["record_type", "Movie"], ["record_id", 33], ["blob_id", 6], ["created_at", "2024-03-30 17:16:58.207946"]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:16:58.209262"], ["id", 33]]
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:17:in `create'
+[36m  Disk Storage (0.6ms) [0m[32mUploaded file to key: 1ty2himoe85fhw5nhjo57fhzzehq (checksum: bJQ9DIMpBvxO0fdcRYMofw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: cf77cb28-7c50-4afc-9cd7-4a202b925f75) to Async(default) with arguments: #<GlobalID:0x0000749f66bdf5b8 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/6>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:17:in `create'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 48ms (ActiveRecord: 3.4ms | Allocations: 29845)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:16:58 -0300
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75] Performing ActiveStorage::AnalyzeJob (Job ID: cf77cb28-7c50-4afc-9cd7-4a202b925f75) from Async(default) enqueued at 2024-03-30T17:16:58.214315668Z with arguments: #<GlobalID:0x0000749f66b390a0 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 33]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mMovie Update (0.1ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2024-03-30 17:16:58.230988"], ["id", 33]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cf77cb28-7c50-4afc-9cd7-4a202b925f75] Performed ActiveStorage::AnalyzeJob (Job ID: cf77cb28-7c50-4afc-9cd7-4a202b925f75) from Async(default) in 13.67ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 4.7ms | Allocations: 3174)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.6ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3982)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5364)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 5839)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--30346e9f5f2c0bb01ba27e3302b6d881ab6f541e/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:16:58 -0300
+Processing by ActiveStorage::Blobs::RedirectController#show as WEBP
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6NiwicHVyIjoiYmxvYl9pZCJ9fQ==--30346e9f5f2c0bb01ba27e3302b6d881ab6f541e", "filename"=>"717kKOl5B3L"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: 1ty2himoe85fhw5nhjo57fhzzehq (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 2011)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:16:58 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:17:03 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 21.6ms | Allocations: 20517)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.6ms | Allocations: 406)
+  Rendered movies/index.html.erb within layouts/application (Duration: 23.1ms | Allocations: 21316)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 36090)
+Completed 200 OK in 43ms (Views: 32.8ms | ActiveRecord: 2.4ms | Allocations: 40554)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:17:04 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started GET "/movies/new" for ::1 at 2024-03-30 14:17:04 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 10723)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 11889)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.8ms | Allocations: 12227)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:05 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 6760)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7921)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.6ms | Allocations: 9216)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:19 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 32.7ms | Allocations: 28105)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 42662)
+Completed 200 OK in 55ms (Views: 41.3ms | ActiveRecord: 3.2ms | Allocations: 51925)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:17:19 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:24 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 35.5ms | Allocations: 28053)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 42610)
+Completed 200 OK in 64ms (Views: 44.4ms | ActiveRecord: 3.5ms | Allocations: 51832)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:17:24 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:29 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 42.4ms | Allocations: 28046)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 42608)
+Completed 200 OK in 64ms (Views: 51.6ms | ActiveRecord: 3.0ms | Allocations: 51812)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:17:30 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:17:32 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 5.4ms | Allocations: 2169)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.8ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2932)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4296)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.4ms | Allocations: 4726)
+
+
+Started GET "/movies" for ::1 at 2024-03-30 14:17:44 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/_resume.html.erb:4
+  Rendered movies/_resume.html.erb (Duration: 29.4ms | Allocations: 20514)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 0.7ms | Allocations: 406)
+  Rendered movies/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 21309)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 36120)
+Completed 200 OK in 51ms (Views: 42.2ms | ActiveRecord: 2.5ms | Allocations: 40581)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiIxdHkyaGltb2U4NWZodzVuaGpvNTdmaHp6ZWhxIiwiZGlzcG9zaXRpb24iOiJhdHRhY2htZW50OyBmaWxlbmFtZT1cIjcxN2tLT2w1QjNMLndlYnBcIjsgZmlsZW5hbWUqPVVURi04Jyc3MTdrS09sNUIzTC53ZWJwIiwiY29udGVudF90eXBlIjoiaW1hZ2Uvd2VicCIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMDMtMzBUMTc6MjE6NTguMjgwWiIsInB1ciI6ImJsb2Jfa2V5In19--407dc239555ec70a26e2cc3d0e3ab32efedb0dd6/717kKOl5B3L.webp" for ::1 at 2024-03-30 14:17:44 -0300
+Processing by ActiveStorage::DiskController#show as WEBP
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"717kKOl5B3L"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:48 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 18.8ms | Allocations: 14072)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 15244)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 1.1ms | Allocations: 16541)
+
+
+Started GET "/movies/33" for ::1 at 2024-03-30 14:17:48 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:3
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:4
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:10
+  [1m[36mGenre Load (0.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:11
+  Rendered movies/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2813)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3974)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 4578)
+
+
+Started DELETE "/movies/33" for ::1 at 2024-03-30 14:17:51 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"33"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 33], ["record_type", "Movie"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mMovie Destroy (0.1ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 33]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:39:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 1ce38a24-fc8a-4065-87fc-408af7d5e311) to Async(default) with arguments: #<GlobalID:0x0000749f663014c8 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/6>>
+[ActiveJob] ↳ app/controllers/movies_controller.rb:39:in `destroy'
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 24ms (ActiveRecord: 13.0ms | Allocations: 5374)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311] Performing ActiveStorage::PurgeJob (Job ID: 1ce38a24-fc8a-4065-87fc-408af7d5e311) from Async(default) enqueued at 2024-03-30T17:17:51.546270171Z with arguments: #<GlobalID:0x0000749f662b8cc8 @uri=#<URI::GID gid://movie-catalog/ActiveStorage::Blob/6>>
+Started GET "/movies" for ::1 at 2024-03-30 14:17:51 -0300
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mActiveStorage::Attachment Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ?[0m  [["blob_id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mActiveStorage::Blob Destroy (0.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 1ty2himoe85fhw5nhjo57fhzzehq[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/1ty2himoe85fhw5nhjo57fhzzehq/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1ce38a24-fc8a-4065-87fc-408af7d5e311] Performed ActiveStorage::PurgeJob (Job ID: 1ce38a24-fc8a-4065-87fc-408af7d5e311) from Async(default) in 17.78ms
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 1]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 3.0ms | Allocations: 412)
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."status" = ? AND "movies"."released" = ?[0m  [["status", 3], ["released", 0]]
+  ↳ app/views/movies/_resume.html.erb:2
+  Rendered movies/_resume.html.erb (Duration: 4.4ms | Allocations: 405)
+  Rendered movies/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1011)
+  Rendered layout layouts/application.html.erb (Duration: 50.8ms | Allocations: 2379)
+Completed 200 OK in 56ms (Views: 52.7ms | ActiveRecord: 0.2ms | Allocations: 2779)
+
+
+Started GET "/directors" for ::1 at 2024-03-30 14:17:52 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 947)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2129)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.2ms | Allocations: 2602)
+
+
+Started GET "/genres" for ::1 at 2024-03-30 14:17:52 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1123)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2304)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 2773)
+
+

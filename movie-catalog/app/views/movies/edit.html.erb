@@ -35,6 +35,10 @@
         <%= f.radio_button :status, '3', :checked => @movie.status == 'published' ? true : false %>
         <%= f.label :status_published, 'Publish' %>
     </div>
+    <div>
+        <%= f.label :cover, 'Cover' %>
+        <%= f.file_field :cover %>
+    </div>
     </div>
     <p>
         <%= f.submit %>

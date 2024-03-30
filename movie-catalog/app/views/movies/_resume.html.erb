@@ -1,0 +1,12 @@
+<ul>
+    <% movies.each do |m| %>
+        <% if m.cover.attached? %>
+            <%= image_tag m.cover, size: '200x300' %>
+        <% end %>
+        <li>
+            <h3><%= m.title %></h3>
+            <p><%= m.release_date.year %></p>
+            <%= link_to 'See more', movie_path(m) %>
+        </li>
+    <% end %>
+</ul>
