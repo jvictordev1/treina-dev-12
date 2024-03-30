@@ -1,0 +1,11 @@
+<%= link_to 'Go back', movies_path %>
+<h1>Drafts</h1>
+<ul>
+    <% @movies.each do |m| %>
+        <li>
+            <h3><%= m.title %></h3>
+            <p><%= m.release_date.year %></p>
+            <%= link_to 'See more', movie_path(m) %>
+        </li>
+    <% end %>
+</ul>
