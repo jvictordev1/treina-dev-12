@@ -4628,3 +4628,2417 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1656)
 
 
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:05:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 181)
+  Rendered layout layouts/application.html.erb (Duration: 119.1ms | Allocations: 32918)
+Completed 200 OK in 131ms (Views: 122.9ms | ActiveRecord: 0.0ms | Allocations: 37007)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:06:00 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2358)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3522)
+Completed 200 OK in 30ms (Views: 11.0ms | ActiveRecord: 2.2ms | Allocations: 10886)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:06:00 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 8513)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 9667)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 1.0ms | Allocations: 11114)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:06:01 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1759)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 2028)
+
+
+Started DELETE "/genres/2" for 127.0.0.1 at 2024-03-30 08:06:03 -0300
+Processing by GenresController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:30:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:31:in `destroy'
+  [1m[36mGenre Destroy (1.0ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/genres_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:31:in `destroy'
+Redirected to http://127.0.0.1:3000/genres
+Completed 302 Found in 9ms (ActiveRecord: 2.4ms | Allocations: 4092)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:06:03 -0300
+Processing by GenresController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2081)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 2393)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2024-03-30 08:06:05 -0300
+Processing by GenresController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1394)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2548)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2908)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:06:05 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 598)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1748)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 2014)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:06:06 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 13.1ms | Allocations: 5271)
+  Rendered directors/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5766)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 6915)
+Completed 200 OK in 32ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 13070)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:06:06 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 5.6ms | Allocations: 1755)
+  Rendered directors/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2036)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3185)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 3451)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 08:06:13 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"José ", "nationality"=>"Brazilian", "born_in"=>"2024-03-12", "genre"=>"4"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mDirector Create (0.5ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "José "], ["nationality", "Brazilian"], ["born_in", "2024-03-12"], ["created_at", "2024-03-30 11:06:13.217524"], ["updated_at", "2024-03-30 11:06:13.217524"], ["genre_id", 4]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 14ms (ActiveRecord: 2.2ms | Allocations: 4960)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:06:13 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 677)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1827)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 2092)
+
+
+Started GET "/directors/10" for 127.0.0.1 at 2024-03-30 08:06:14 -0300
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/show.html.erb:6
+  Rendered directors/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2200)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 3508)
+
+
+Started DELETE "/directors/10" for 127.0.0.1 at 2024-03-30 08:06:20 -0300
+Processing by DirectorsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mDirector Destroy (1.5ms)[0m  [1m[31mDELETE FROM "directors" WHERE "directors"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms | Allocations: 1853)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:06:20 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 603)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1753)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 2018)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:06:22 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1368)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 1618)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:07:18 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 898)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2047)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 2309)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:07:18 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 1745)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 2007)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:07:19 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 4.6ms | Allocations: 1753)
+  Rendered directors/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2024)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3173)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 3439)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 08:07:23 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"a", "nationality"=>"a", "born_in"=>"2024-03-26", "genre"=>"4"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mGenre Load (8.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mDirector Create (0.3ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "a"], ["nationality", "a"], ["born_in", "2024-03-26"], ["created_at", "2024-03-30 11:07:23.953989"], ["updated_at", "2024-03-30 11:07:23.953989"], ["genre_id", 4]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 15ms (ActiveRecord: 8.6ms | Allocations: 2650)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:07:23 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 672)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 1833)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 2099)
+
+
+Started GET "/directors/11" for 127.0.0.1 at 2024-03-30 08:07:24 -0300
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/show.html.erb:6
+  Rendered directors/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 873)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2018)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 2624)
+
+
+Started GET "/directors/11/edit" for 127.0.0.1 at 2024-03-30 08:07:25 -0300
+Processing by DirectorsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/edit.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 5.9ms | Allocations: 2059)
+  Rendered directors/edit.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2244)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3389)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 4058)
+
+
+Started PATCH "/directors/11" for 127.0.0.1 at 2024-03-30 08:07:28 -0300
+Processing by DirectorsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"2", "nationality"=>"a", "born_in"=>"2024-03-26", "genre"=>"3"}, "commit"=>"Update Director", "id"=>"11"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:27:in `update'
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:27:in `update'
+  [1m[36mDirector Update (0.2ms)[0m  [1m[33mUPDATE "directors" SET "name" = ?, "updated_at" = ?, "genre_id" = ? WHERE "directors"."id" = ?[0m  [["name", "2"], ["updated_at", "2024-03-30 11:07:28.108787"], ["genre_id", 3], ["id", 11]]
+  ↳ app/controllers/directors_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:27:in `update'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms | Allocations: 3237)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:07:28 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 669)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1819)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 2084)
+
+
+Started GET "/directors/11" for 127.0.0.1 at 2024-03-30 08:07:30 -0300
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/directors/show.html.erb:6
+  Rendered directors/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2021)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 2628)
+
+
+Started DELETE "/directors/11" for 127.0.0.1 at 2024-03-30 08:07:31 -0300
+Processing by DirectorsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"11"}
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mDirector Destroy (1.0ms)[0m  [1m[31mDELETE FROM "directors" WHERE "directors"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms | Allocations: 1854)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:07:31 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1772)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 2037)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:07:32 -0300
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1374)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1624)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:07:32 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2029)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 2291)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:10:14 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1222)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 15739)
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 2.1ms | Allocations: 17573)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:10:14 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 13.2ms | Allocations: 6608)
+  Rendered directors/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 7037)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 8187)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 1.4ms | Allocations: 11694)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:10:14 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 4.5ms | Allocations: 1753)
+  Rendered directors/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2015)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3164)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 3430)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 08:10:22 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"José ", "nationality"=>"Brazilian", "born_in"=>"2024-03-12", "genre"=>"4"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mGenre Load (1.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mDirector Create (0.2ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "José "], ["nationality", "Brazilian"], ["born_in", "2024-03-12"], ["created_at", "2024-03-30 11:10:22.239391"], ["updated_at", "2024-03-30 11:10:22.239391"], ["genre_id", 4]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (23.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 32ms (ActiveRecord: 24.9ms | Allocations: 3472)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:10:22 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 680)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 1830)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 2138)
+
+
+Started GET "/directors/12" for 127.0.0.1 at 2024-03-30 08:10:22 -0300
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/show.html.erb:6
+  Rendered directors/show.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1078)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2223)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 3523)
+
+
+Started DELETE "/directors/12" for 127.0.0.1 at 2024-03-30 08:10:26 -0300
+Processing by DirectorsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"12"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mDirector Destroy (0.9ms)[0m  [1m[31mDELETE FROM "directors" WHERE "directors"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:32:in `destroy'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms | Allocations: 1871)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:10:26 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 612)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1762)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 2027)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20240330111526)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "release_date" date, "synopsis" varchar, "duration" integer, "director_id" integer NOT NULL, "genre_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_69fe0cadf9"
+FOREIGN KEY ("director_id")
+  REFERENCES "directors" ("id")
+, CONSTRAINT "fk_rails_0a6710c65a"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_movies_on_director_id" ON "movies" ("director_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_movies_on_genre_id" ON "movies" ("genre_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240330111526') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:18:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (1.3ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 15700)
+Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 2.0ms | Allocations: 17904)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:19:57 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 15581)
+Completed 200 OK in 24ms (Views: 16.8ms | ActiveRecord: 1.9ms | Allocations: 17727)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:19:58 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1742)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 2002)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:20:02 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  Rendered movie/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1452)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1910)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:20:03 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  Rendered movie/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1359)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1607)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:20:34 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  Rendered movie/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 99)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 14839)
+Completed 200 OK in 28ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 17008)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:21:00 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movie/index.html.erb:4
+  Rendered movie/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 889)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 15474)
+Completed 200 OK in 38ms (Views: 31.0ms | ActiveRecord: 2.5ms | Allocations: 17594)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:21:57 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movie/index.html.erb:4
+  Rendered movie/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 15560)
+Completed 200 OK in 25ms (Views: 17.2ms | ActiveRecord: 2.3ms | Allocations: 17687)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:22:23 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movie/index.html.erb:4
+  Rendered movie/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 916)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 15554)
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 2.3ms | Allocations: 17674)
+
+
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:22:45 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3466)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4624)
+Completed 200 OK in 16ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 6160)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:22:46 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 897)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2061)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3553)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:22:46 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2025)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 2288)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:22:46 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 592)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1742)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 2004)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:22:46 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 895)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2044)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 2306)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:22:48 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 598)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1748)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 2010)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:22:49 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 7.0ms | Allocations: 3725)
+  Rendered directors/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4175)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5325)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 8714)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 08:22:55 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"José ", "nationality"=>"Brazillian", "born_in"=>"2024-03-11", "genre"=>"4"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mDirector Create (0.3ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "José "], ["nationality", "Brazillian"], ["born_in", "2024-03-11"], ["created_at", "2024-03-30 11:22:55.984101"], ["updated_at", "2024-03-30 11:22:55.984101"], ["genre_id", 4]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms | Allocations: 3582)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:22:55 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1824)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 2132)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:22:57 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 865)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2014)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2277)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:22:57 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movie/index.html.erb:4
+  Rendered movie/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1716)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 1979)
+
+
+  [1m[36mDirector Load (0.3ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:27:41 -0300
+Processing by MovieController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movie/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movie/index.html.erb:5
+  Rendered movie/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 995)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 15689)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 2.3ms | Allocations: 17815)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:27:42 -0300
+  
+ActionController::RoutingError (uninitialized constant MoviesController):
+  
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:27:57 -0300
+Processing by MoviesController#new as HTML
+Completed 406 Not Acceptable in 27ms (ActiveRecord: 2.5ms | Allocations: 10561)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#new is missing a template for request formats: text/html):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.3.2) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:28:18 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 14823)
+Completed 200 OK in 28ms (Views: 16.1ms | ActiveRecord: 2.8ms | Allocations: 21019)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:28:20 -0300
+  
+ActionController::RoutingError (uninitialized constant MovieController):
+  
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:28:23 -0300
+  
+ActionController::RoutingError (uninitialized constant MovieController):
+  
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:29:03 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 990)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 15763)
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 1.9ms | Allocations: 17887)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:29:05 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1430)
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 5568)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:29:06 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3345)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4498)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.5ms | Allocations: 6004)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:29:06 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 1727)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 1990)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:29:24 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1349)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 1617)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:30:24 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 2077)
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 16441)
+Completed 200 OK in 50ms (Views: 38.0ms | ActiveRecord: 2.5ms | Allocations: 22581)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:30:32 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 16201)
+Completed 200 OK in 32ms (Views: 18.8ms | ActiveRecord: 2.5ms | Allocations: 22399)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:30:57 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1749)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1841)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.4ms | Allocations: 7985)
+
+
+  
+ActionView::Template::Error (undefined method `date_area' for #<ActionView::Helpers::FormBuilder:0x00007b47b9294420 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x00000000047ef0>, @object=#<Movie id: nil, title: nil, release_date: nil, synopsis: nil, duration: nil, director_id: nil, genre_id: nil, created_at: nil, updated_at: nil>, @object_name="movie", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>):
+     7:     </div>
+     8:     <div>
+     9:         <%= f.label :release_date %><br>
+    10:         <%= f.date_area :description %>
+    11:     </div>
+    12:     <p>
+    13:         <%= f.label :year %><br>
+  
+app/views/movies/new.html.erb:10
+app/views/movies/new.html.erb:3
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:31:28 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1650)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 16191)
+Completed 200 OK in 32ms (Views: 19.9ms | ActiveRecord: 2.7ms | Allocations: 22385)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:33:07 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 16226)
+Completed 200 OK in 44ms (Views: 32.3ms | ActiveRecord: 2.4ms | Allocations: 22387)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:34:31 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:21
+  Rendered movies/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 6430)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 20856)
+Completed 200 OK in 47ms (Views: 34.7ms | ActiveRecord: 3.1ms | Allocations: 26994)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:34:40 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  Rendered movies/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 6548)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 20980)
+Completed 200 OK in 44ms (Views: 30.5ms | ActiveRecord: 3.7ms | Allocations: 27179)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:34:46 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  Rendered movies/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 6521)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 21063)
+Completed 200 OK in 47ms (Views: 32.5ms | ActiveRecord: 3.9ms | Allocations: 27224)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:35:15 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 10269)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 24704)
+Completed 200 OK in 57ms (Views: 44.0ms | ActiveRecord: 4.0ms | Allocations: 30845)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:36:13 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.3ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 10269)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 24708)
+Completed 200 OK in 53ms (Views: 38.0ms | ActiveRecord: 4.0ms | Allocations: 30907)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 08:36:22 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-12", "synopsis"=>"12312312312", "duration"=>"123", "director_id"=>"13", "genre_id"=>"4"}, "commit"=>"Create Movie"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 793)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/movies_controller.rb:9:in `create'
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:37:57 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:22
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/new.html.erb:26
+  Rendered movies/new.html.erb within layouts/application (Duration: 23.9ms | Allocations: 10281)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 24823)
+Completed 200 OK in 58ms (Views: 40.4ms | ActiveRecord: 3.4ms | Allocations: 31018)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 08:38:03 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-12", "synopsis"=>"123123", "duration"=>"123123", "director_id"=>"13", "genre_id"=>"4"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mDirector Load (1.4ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "ABC"], ["release_date", "2024-03-12"], ["synopsis", "123123"], ["duration", 123123], ["director_id", 13], ["genre_id", 4], ["created_at", "2024-03-30 11:38:03.781112"], ["updated_at", "2024-03-30 11:38:03.781112"]]
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 15ms (ActiveRecord: 3.1ms | Allocations: 6736)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:38:03 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 708)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2053)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 2456)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:38:51 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 4894)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 19642)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 2.8ms | Allocations: 21769)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:38:52 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for MoviesController):
+  
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:39:15 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 2.5ms | Allocations: 7044)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#show is missing a template for request formats: text/html):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.3.2) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:42:31 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1288)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1380)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 11.3ms | Allocations: 8552)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"directors", :id=>nil}, missing required keys: [:id]):
+    5:     <li>Synopsis: <%= @movie.synopsis %></li>
+    6:     <li>Duration: <%= @movie.duration / 60 %>h and <%= @movie.duration % 60 %>min</li>
+    7: </ul>
+    8: <%= link_to 'Edit', edit_director_path(@director) %>
+    9: <%= button_to "delete", director_path(@director), :method => :delete %>
+  
+app/views/movies/show.html.erb:8
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:42:40 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 15015)
+Completed 200 OK in 32ms (Views: 17.8ms | ActiveRecord: 2.4ms | Allocations: 22210)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:42:55 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 257)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 15003)
+Completed 200 OK in 35ms (Views: 19.4ms | ActiveRecord: 2.7ms | Allocations: 22159)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:43:03 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 270)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 14835)
+Completed 200 OK in 29ms (Views: 15.1ms | ActiveRecord: 2.9ms | Allocations: 21969)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:43:44 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1288)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.5ms | Allocations: 8457)
+
+
+  
+ActionView::Template::Error (undefined method `name' for 13:Integer):
+    4:     <li>Release datae: <%= @movie.release_date.strftime("%d/%m/%Y") %></li>
+    5:     <li>Synopsis: <%= @movie.synopsis %></li>
+    6:     <li>Duration: <%= @movie.duration / 60 %>h and <%= @movie.duration % 60 %>min</li>
+    7:     <li>Director: <%= @movie.director_id.name %></li>
+    8: </ul>
+  
+app/views/movies/show.html.erb:7
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:44:09 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  Rendered movies/show.html.erb within layouts/application (Duration: 14.2ms | Allocations: 6772)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 21511)
+Completed 200 OK in 55ms (Views: 33.2ms | ActiveRecord: 3.5ms | Allocations: 28703)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:44:22 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 21.7ms | Allocations: 11672)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 26237)
+Completed 200 OK in 52ms (Views: 35.8ms | ActiveRecord: 4.2ms | Allocations: 33368)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:44:26 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 718)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2077)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 2403)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:44:30 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1063)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2409)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 3015)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:44:31 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 454)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1811)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 2073)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:45:39 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 20.6ms | Allocations: 11772)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 26519)
+Completed 200 OK in 50ms (Views: 35.3ms | ActiveRecord: 3.5ms | Allocations: 33714)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:45:39 -0300
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for MoviesController):
+  
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:45:56 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 2.5ms | Allocations: 7045)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#edit is missing a template for request formats: text/html):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.3.2) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:47:27 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 23.1ms | Allocations: 10332)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 24.4ms | Allocations: 10584)
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 25174)
+Completed 200 OK in 67ms (Views: 51.0ms | ActiveRecord: 3.9ms | Allocations: 32363)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:47:42 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 22.2ms | Allocations: 10313)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 23.5ms | Allocations: 10566)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 24966)
+Completed 200 OK in 55ms (Views: 39.4ms | ActiveRecord: 3.8ms | Allocations: 32158)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:47:58 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2084)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2560)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:47:59 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2343)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 2814)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:47:59 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2041)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 2366)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:48:01 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4533)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5845)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.6ms | Allocations: 6512)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:48:01 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 9.2ms | Allocations: 2350)
+  Rendered movies/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2515)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3679)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 4018)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:48:04 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1098)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2434)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 3040)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:48:05 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 5.3ms | Allocations: 2390)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2456)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3603)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 4209)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:49:20 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 20.4ms | Allocations: 10285)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 21.5ms | Allocations: 10534)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 25057)
+Completed 200 OK in 51ms (Views: 37.9ms | ActiveRecord: 3.7ms | Allocations: 32250)
+
+
+Started PATCH "/movies/1" for 127.0.0.1 at 2024-03-30 08:49:24 -0300
+Processing by MoviesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-12", "synopsis"=>"eu caguei.", "duration"=>"123123", "director_id"=>"13", "genre_id"=>"4"}, "commit"=>"Update Movie", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+  [1m[36mMovie Update (1.2ms)[0m  [1m[33mUPDATE "movies" SET "synopsis" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["synopsis", "eu caguei."], ["updated_at", "2024-03-30 11:49:24.419030"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:27:in `update'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 20ms (ActiveRecord: 13.1ms | Allocations: 2562)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:49:24 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2072)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 2443)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:49:25 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4535)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5884)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.6ms | Allocations: 6551)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:49:25 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1098)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2447)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 3053)
+
+
+Started GET "/movies/1/edit" for 127.0.0.1 at 2024-03-30 08:49:29 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.4ms | Allocations: 2424)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2490)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3635)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 4241)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:49:30 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 454)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 1789)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 2051)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:49:32 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 454)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1825)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 2087)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:49:33 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.9ms | Allocations: 2381)
+  Rendered movies/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2543)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3692)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 4030)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 08:49:39 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"123", "release_date"=>"2024-03-20", "synopsis"=>"123123", "duration"=>"123123", "director_id"=>"13", "genre_id"=>"4"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mDirector Load (1.3ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "123"], ["release_date", "2024-03-20"], ["synopsis", "123123"], ["duration", 123123], ["director_id", 13], ["genre_id", 4], ["created_at", "2024-03-30 11:49:39.830068"], ["updated_at", "2024-03-30 11:49:39.830068"]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms | Allocations: 3425)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:49:39 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1857)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 2122)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2024-03-30 08:49:39 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1098)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2432)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 3038)
+
+
+Started GET "/movies/2/edit" for 127.0.0.1 at 2024-03-30 08:49:41 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.1ms | Allocations: 2412)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2478)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3623)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 4230)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2024-03-30 08:50:42 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 22.5ms | Allocations: 12090)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 26622)
+Completed 200 OK in 52ms (Views: 36.3ms | ActiveRecord: 3.8ms | Allocations: 33814)
+
+
+Started DELETE "/movies/2" for 127.0.0.1 at 2024-03-30 08:50:43 -0300
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for MoviesController):
+  
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies/2" for 127.0.0.1 at 2024-03-30 08:50:43 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1392)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2552)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3157)
+
+
+Started DELETE "/movies/2" for 127.0.0.1 at 2024-03-30 08:51:20 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 21ms (ActiveRecord: 6.9ms | Allocations: 7890)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:51:21 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 747)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 15527)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 16461)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2024-03-30 08:51:22 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 23.6ms | Allocations: 12142)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 13288)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 1.5ms | Allocations: 13955)
+
+
+Started DELETE "/movies/1" for 127.0.0.1 at 2024-03-30 08:51:24 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mMovie Destroy (1.0ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms | Allocations: 1842)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:51:24 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 400)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1741)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 2006)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:51:30 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 23.6ms | Allocations: 10237)
+  Rendered movies/new.html.erb within layouts/application (Duration: 24.6ms | Allocations: 10470)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 25013)
+Completed 200 OK in 57ms (Views: 40.2ms | ActiveRecord: 5.3ms | Allocations: 31215)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 08:51:36 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"123123", "release_date"=>"2024-03-13", "synopsis"=>"123123", "duration"=>"123", "director_id"=>"13", "genre_id"=>"4"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mDirector Load (1.4ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "123123"], ["release_date", "2024-03-13"], ["synopsis", "123123"], ["duration", 123], ["director_id", 13], ["genre_id", 4], ["created_at", "2024-03-30 11:51:36.772871"], ["updated_at", "2024-03-30 11:51:36.772871"]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (17.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 31ms (ActiveRecord: 19.1ms | Allocations: 6704)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:51:36 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 752)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2117)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2520)
+
+
+Started GET "/movies/3" for 127.0.0.1 at 2024-03-30 08:51:37 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1653)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2798)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 4105)
+
+
+Started DELETE "/movies/3" for 127.0.0.1 at 2024-03-30 08:51:39 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mMovie Destroy (0.9ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms | Allocations: 1881)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:51:39 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 400)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1777)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 2042)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:52:25 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 23.8ms | Allocations: 10236)
+  Rendered movies/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 10467)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 24826)
+Completed 200 OK in 54ms (Views: 39.7ms | ActiveRecord: 3.7ms | Allocations: 30962)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:52:25 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 900)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2063)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms | Allocations: 2539)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:52:26 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2348)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2820)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:52:26 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 631)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1781)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 2043)
+
+
+Started GET "/directors/13" for 127.0.0.1 at 2024-03-30 08:52:27 -0300
+Processing by DirectorsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mDirector Load (0.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/show.html.erb:6
+  Rendered directors/show.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2935)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4095)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 5388)
+
+
+Started GET "/directors/13/edit" for 127.0.0.1 at 2024-03-30 08:52:28 -0300
+Processing by DirectorsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering directors/edit.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 6.8ms | Allocations: 2325)
+  Rendered directors/edit.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2565)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3710)
+Completed 200 OK in 24ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 4377)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:52:29 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 646)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1798)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2060)
+
+
+Started GET "/directors/new" for 127.0.0.1 at 2024-03-30 08:52:30 -0300
+Processing by DirectorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/directors/_form.html.erb:11
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/directors/_form.html.erb:11
+  Rendered directors/_form.html.erb (Duration: 4.4ms | Allocations: 1753)
+  Rendered directors/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2124)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3285)
+Completed 200 OK in 20ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 3621)
+
+
+Started POST "/directors" for 127.0.0.1 at 2024-03-30 08:52:39 -0300
+Processing by DirectorsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "director"=>{"name"=>"Pedro", "nationality"=>"Mexican", "born_in"=>"2024-03-27", "genre"=>"4"}, "commit"=>"Create Director"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mDirector Create (0.3ms)[0m  [1m[32mINSERT INTO "directors" ("name", "nationality", "born_in", "created_at", "updated_at", "genre_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Pedro"], ["nationality", "Mexican"], ["born_in", "2024-03-27"], ["created_at", "2024-03-30 11:52:39.216625"], ["updated_at", "2024-03-30 11:52:39.216625"], ["genre_id", 4]]
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/directors_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/directors
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms | Allocations: 2912)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:52:39 -0300
+Processing by DirectorsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 689)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1840)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 2148)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:52:40 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 892)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2041)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 2303)
+
+
+Started GET "/directors" for 127.0.0.1 at 2024-03-30 08:52:42 -0300
+Processing by DirectorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering directors/index.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors"[0m
+  ↳ app/views/directors/index.html.erb:8
+  Rendered directors/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 690)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 1840)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 2102)
+
+
+Started GET "/genres" for 127.0.0.1 at 2024-03-30 08:52:43 -0300
+Processing by GenresController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:8
+  Rendered genres/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 877)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2026)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 2289)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-30 08:52:43 -0300
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 682)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2004)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 2367)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:52:44 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.0ms | Allocations: 2389)
+  Rendered movies/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2453)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3602)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 3870)
+
+
+Started POST "/movies" for 127.0.0.1 at 2024-03-30 08:52:51 -0300
+Processing by MoviesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "movie"=>{"title"=>"ABC", "release_date"=>"2024-03-26", "synopsis"=>"111111", "duration"=>"123", "director_id"=>"14", "genre_id"=>"4"}, "commit"=>"Create Movie"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mDirector Load (1.2ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "synopsis", "duration", "director_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "ABC"], ["release_date", "2024-03-26"], ["synopsis", "111111"], ["duration", 123], ["director_id", 14], ["genre_id", 4], ["created_at", "2024-03-30 11:52:51.892536"], ["updated_at", "2024-03-30 11:52:51.892536"]]
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:15:in `create'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 13ms (ActiveRecord: 1.9ms | Allocations: 6538)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:52:51 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 472)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1834)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 2099)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2024-03-30 08:52:52 -0300
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:6:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" WHERE "directors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:7
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:8
+  Rendered movies/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1649)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2794)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.4ms | Allocations: 4101)
+
+
+Started GET "/movies/4/edit" for 127.0.0.1 at 2024-03-30 08:52:55 -0300
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:22:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.5ms | Allocations: 2446)
+  Rendered movies/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2623)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3768)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 4435)
+
+
+Started DELETE "/movies/4" for 127.0.0.1 at 2024-03-30 08:52:57 -0300
+Processing by MoviesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:36:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mMovie Destroy (1.7ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:37:in `destroy'
+Redirected to http://127.0.0.1:3000/movies
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms | Allocations: 1896)
+
+
+Started GET "/movies" for 127.0.0.1 at 2024-03-30 08:52:57 -0300
+Processing by MoviesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:5
+  Rendered movies/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 400)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1741)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 2006)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2024-03-30 08:52:58 -0300
+Processing by MoviesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mDirector Load (0.1ms)[0m  [1m[34mSELECT "directors".* FROM "directors" ORDER BY "directors"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:20
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/movies/_form.html.erb:24
+  Rendered movies/_form.html.erb (Duration: 6.6ms | Allocations: 2390)
+  Rendered movies/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2454)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3603)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 3871)
+
+

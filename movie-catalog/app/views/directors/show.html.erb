@@ -2,7 +2,7 @@
 <h2><%= @director.name %></h2>
 <ul>
     <li>Nationality: <%= @director.nationality %></li>
-    <li>Born in: <%= @director.born_in %></li>
+    <li>Born in: <%= @director.born_in.strftime("%d/%m/%Y") %></li>
     <li>Favorite genre: <%= @director.genre.name %></li>
 </ul>
 <%= link_to 'Edit', edit_director_path(@director) %>

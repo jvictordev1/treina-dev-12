@@ -1,0 +1,11 @@
+<h1>Movie Catalog</h1>
+<h2>All movies</h2>
+<%= link_to 'Register a new movie!', new_movie_path %>
+
+<% @movies.each do |m| %>
+    <div>
+        <h3><%= m.title %></h3>
+        <p><%= m.release_date.year %></p>
+        <%= link_to 'See more', movie_path(m) %>
+    </div>
+<% end %>
