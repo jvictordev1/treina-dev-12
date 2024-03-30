@@ -4,6 +4,7 @@ class DirectorsController < ApplicationController
   end
   def show
     @director = Director.find(params[:id])
+    @movies = Movie.where(director_id: @director.id)
   end
   def new
     @director = Director.new

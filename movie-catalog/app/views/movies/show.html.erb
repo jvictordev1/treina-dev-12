@@ -1,7 +1,7 @@
 <%= link_to 'Go back', movies_path %>
 <h2><%= @movie.title %></h2>
 <ul>
-    <li>Release datae: <%= @movie.release_date.strftime("%d/%m/%Y") %></li>
+    <li>Release data: <%= @movie.release_date.strftime("%d/%m/%Y") %></li>
     <li>Synopsis: <%= @movie.synopsis %></li>
     <li>Duration: <%= @movie.duration / 60 %>h and <%= @movie.duration % 60 %>min</li>
     <li>Director: <%= @movie.director.name %></li>

@@ -8,6 +8,7 @@
 <% @genres.each do |g| %>
     <div>
         <h3><%= g.name %></h3>
+        <%= link_to 'See more', genre_path(g) %>
         <%= link_to 'Edit', edit_genre_path(g) %>
         <%= button_to "delete", genre_path(g), :method => :delete %>
     </div>

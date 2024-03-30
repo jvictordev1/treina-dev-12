@@ -1,9 +1,15 @@
 <%= link_to 'Go back', directors_path %>
-<h2><%= @director.name %></h2>
+<h2>Director <%= @director.name %></h2>
 <ul>
     <li>Nationality: <%= @director.nationality %></li>
     <li>Born in: <%= @director.born_in.strftime("%d/%m/%Y") %></li>
     <li>Favorite genre: <%= @director.genre.name %></li>
+</ul>
+<h2>Movies</h2>
+<ul>
+    <% @movies.each do |movie| %>
+        <li><h3><%= link_to movie.title, movie_path(movie) %></h3></li>
+    <% end %>
 </ul>
 <%= link_to 'Edit', edit_director_path(@director) %>
 <%= button_to "delete", director_path(@director), :method => :delete %>

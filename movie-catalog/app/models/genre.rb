@@ -1,4 +1,4 @@
 class Genre < ApplicationRecord
-    has_many :director
-    has_many :genre
+    has_many :director, dependent: :destroy
+    has_many :movie, dependent: :destroy
 end

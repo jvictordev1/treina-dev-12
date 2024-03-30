@@ -2,6 +2,10 @@ class GenresController < ApplicationController
     def index
         @genres = Genre.all
     end
+    def show
+        @genre = Genre.find(params[:id])
+        @movies = Movie.where(genre_id: @genre.id)
+    end
     def new
         @genre = Genre.new
     end
@@ -29,6 +33,6 @@ class GenresController < ApplicationController
     def destroy
         genre = Genre.find(params[:id])
         genre.destroy
-        redirect_to genres_path, notice: "Genre #{genre.name} deleted successfully" 
+        redirect_to genres_path, notice: "Genre #{genre.name} deleted successfully"
     end
 end
